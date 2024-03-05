@@ -1,0 +1,21 @@
+.containerProps {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #000  ;
+    border-radius: 5px;
+    background-color: #7070ce;
+  }
+
+.containerProps .imagem {
+    width: 100px;
+    height: 100%;
+
+    margin-right: 100px;
+    margin-top: 50px;
+
+}
+
+.containerProps .dados {
+    display: flex;
+}
+  
