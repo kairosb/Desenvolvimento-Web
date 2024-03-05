@@ -1,0 +1,13 @@
+.containerTemp {
+    width: 100%;
+    background-color: salmon;
+
+}
+
+.containerTemp .titulo {
+    text-align: center;
+}
+
+.containerTemp .itens {
+    margin: 20px 20px;
+}
