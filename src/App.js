@@ -1,31 +1,21 @@
-import React from 'react';
-import { FuncaoMeusDados, SemReturnMeusDados, ComReturnMeusDados, ClassMeusDados } from './components/atividade00/MeusDados'
-import MeusDadosProps from './components/atividade00/MeusDadosProps';
-import kairo from './components/atividade00/kairo.jpg';
-import estevam from './components/atividade00/WhatsApp Image 2024-03-05 at 10.30.53.jpeg'
-import { Temperatura } from './components/atividade00/Temperatura';
+import Pai from './components/atividade01/questao01/01Pai'
+import { PlacaMae as PCPlacaMae, Memoria as PCMemoria, PlacaDeVideo as PCPlacaDeVideo } from './components/atividade01/02MeuPC';
+import { World, Arena } from './components/atividade01/03Batalha';
 
 function App() {
     return (
         <div>
-            <FuncaoMeusDados />
-            <SemReturnMeusDados />
-            <ComReturnMeusDados />
-            <ClassMeusDados />
-            <MeusDadosProps
-                imagem={kairo}
-                nome="Kairo Sales"
-                curso="Engenharia de Software"
-                faculdade="UFC"
-            />
-            <MeusDadosProps
-                imagem={estevam}
-                nome="Luis Estevam"
-                curso="Engenharia de Software"
-                faculdade="UFC"
-            />
+            <Pai />
+            <h1 style={{ textAlign: 'center', marginTop: "50px" }}>MEU PC:</h1>
+            <PCPlacaMae nome="i5-7300" preco="$500" />
+            <PCMemoria nome="24gb memoria RAM" preco="$400" />
+            <PCPlacaDeVideo nome="Intel HD Graphics 620" preco="$300" />
 
-            <Temperatura />
+            <h1 style={{ textAlign: 'center', marginTop: "50px" }}>A BATALHA:</h1>
+
+            <World>
+                <Arena />
+            </World>
         </div>
     );
 }
