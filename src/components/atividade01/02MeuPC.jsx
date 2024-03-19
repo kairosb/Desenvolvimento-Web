@@ -40,3 +40,9 @@ export const PlacaDeVideo = ({ nome, preco }) => {
         </div>
     );
 };
+
+export const PCcomponents = {
+    PlacaMae,
+    Memoria,
+    PlacaDeVideo
+}
