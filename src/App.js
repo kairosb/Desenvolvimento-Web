@@ -1,21 +1,23 @@
-import Pai from './components/atividade01/questao01/01Pai'
-import * as PC from './components/atividade01/02MeuPC'
-import { World, Arena } from './components/atividade01/03Batalha';
+import ClassA from "./components/atividade02/questao01/ClassA";
+import FunctionContextA from "./components/atividade02/questao01/FunctionContextA";
+import ComponenteAvo from "./components/atividade02/questao02/ComponenteAvo";
+import ComponenteAvo2 from "./components/atividade02/questao03/ComponenteAvo2";
 
 function App() {
     return (
-        <div>
-            <Pai />
-            <h1 style={{ textAlign: 'center', marginTop: "50px" }}>MEU PC:</h1>
-            <PC.PlacaMae nome="i5-7300" preco="$500" />
-            <PC.Memoria nome="24gb memoria RAM" preco="$400" />
-            <PC.PlacaDeVideo nome="Intel HD Graphics 620" preco="$300" />
+        <div style={{ backgroundColor: "#F0F0F0" }}>
+            <h1>QUESTÃO 1</h1>
+            <h3>Componente de Classe:</h3>
+            <ClassA />
+            <h3>Componente Funcional:</h3>
+            <FunctionContextA />
+            <br></br>
+            <h1>QUESTÃO 2</h1>
+            <h3>Pokémooooooooooooooonnnnnnnnnnnn</h3>
+            <ComponenteAvo />
 
-            <h1 style={{ textAlign: 'center', marginTop: "50px" }}>A BATALHA:</h1>
-
-            <World>
-                <Arena />
-            </World>
+            <h1>QUESTÃO 3</h1>
+            <ComponenteAvo2 />
         </div>
     );
 }
