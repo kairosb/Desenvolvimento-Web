@@ -1,0 +1,75 @@
+Questão 05 - Como o uso de Contextos pode resolver o problema de PROPS DRILLING
+
+Contextos oferecem uma maneira de compartilhar valores entre componentes 
+sem precisar passar explicitamente uma prop através de cada nível da árvore de componentes.
+
+Exemplo:
+
+Vamos supor que temos uma aplicação com a seguinte estrutura de componentes:
+
+App -> ComponenteA -> ComponenteB -> ComponenteC
+
+E queremos compartilhar um valor de estado do App com o ComponenteC.
+
+Desenhando como seria feito a passagem do valor
+
+App -> ComponenteA
+ComponenteA -> ComponenteB
+ComponenteB -> ComponenteC
+
+Com props drilling o valor teria que ser passado primeiro para o ComponenteA
+Depois para o ComponenteB e só depois para o ComponenteC
+Mesmo se o ComponenteA e ComponenteB não usassem esse valor
+Isso pode deixar o código sujo, com menor eficiência e de difícil manutenção e.
+
+Já com o uso de Contextos o componente App pode fornecer através de um Provider esse Valor
+sem precisar passar por intermediários
+
+Exemplo:
+
+// App.js
+import { useState, createContext } from 'react';
+import ComponenteA from './ComponenteA';
+
+export const ValorContext = createContext();
+
+const App = () => {
+    const [valor, setValor] = useState('Valor compartilhado');
+
+    return (
+        <ValorContext.Provider value={valor}>
+            <ComponenteA />
+        </ValorContext.Provider>
+    );
+};
+
+export default App;
+
+// ComponenteA.js
+import ComponenteB from './ComponenteB';
+
+const ComponenteA = () => {
+    return <ComponenteB />;
+};
+
+export default ComponenteA;
+
+// ComponenteB.js
+import ComponenteC from './ComponenteC';
+
+const ComponenteB = () => {
+    return <ComponenteC />;
+};
+
+export default ComponenteB;
+
+// ComponenteC.js
+import { useContext } from 'react';
+import { ValorContext } from './App';
+
+const ComponenteC = () => {
+    const valor = useContext(ValorContext);
+    return <div>{valor}</div>;
+};
+
+export default ComponenteC;
