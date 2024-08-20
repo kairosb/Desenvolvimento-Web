@@ -28,14 +28,16 @@ const Questao03 = () => {
 
     // ordena as capitais pela população em ordem crescente
     const capitaisOrdenadas = capitals.sort((a, b) => a.population - b.population);
-    const menorPopulacao = capitaisOrdenadas[0];
-    const maiorPopulacao = capitaisOrdenadas[capitaisOrdenadas.length - 1];
 
     return (
         <div>
             <h3>Capitais com Menor e Maior População</h3>
-            <p>Menor população: {menorPopulacao.capital[0]} com {menorPopulacao.population} habitantes</p>
-            <p>Maior população: {maiorPopulacao.capital[0]} com {maiorPopulacao.population} habitantes</p>
+            <h4>Menor população:</h4>
+            <p>{capitaisOrdenadas[0].capital[0]} com {capitaisOrdenadas[0].population} habitantes</p>
+            <p>{capitaisOrdenadas[1].capital[0]} com {capitaisOrdenadas[1].population} habitantes</p>
+            <h4>Maior população:</h4>
+            <p>{capitaisOrdenadas[capitaisOrdenadas.length - 1].capital[0]} com {capitaisOrdenadas[capitaisOrdenadas.length - 1].population} habitantes</p>
+            <p>{capitaisOrdenadas[capitaisOrdenadas.length - 2].capital[0]} com {capitaisOrdenadas[capitaisOrdenadas.length - 2].population} habitantes</p>
         </div>
     );
 };
